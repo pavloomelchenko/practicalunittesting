@@ -15,4 +15,11 @@ public class Utils {
 		}
 		return builder.toString();
 	}
+	
+	public static String formatMillis(long millis){
+		long second = (millis / 1000) % 60;
+		long minute = (millis / (1000 * 60)) % 60;
+
+		return String.format("%02d:%02d:%d",  minute, second, millis);
+	}
 }
