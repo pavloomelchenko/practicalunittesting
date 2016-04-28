@@ -17,6 +17,7 @@ public class HelpDeskTest {
 	TimeProvider provider = mock(TimeProvider.class);
 	HelpDesk helpDesk = new HelpDesk(provider);
 	Issue issue = mock(Issue.class);
+	int SAMPLE_WORKING_HOUR = 10;
 	
 	private static final Object[] weekends(){
 		return new Object[]{Calendar.SATURDAY,Calendar.SUNDAY};
@@ -63,6 +64,7 @@ public class HelpDeskTest {
 	public void shouldHandleIssueInWorkDay(int dayOfWeek){
 		Calendar cal = Calendar.getInstance();
 		cal.set(Calendar.DAY_OF_WEEK, dayOfWeek);
+		cal.set(Calendar.HOUR_OF_DAY, SAMPLE_WORKING_HOUR);
 		doReturn(cal).when(provider).getTime();
 		assertTrue(helpDesk.willHandleIssue(issue));
 	}
