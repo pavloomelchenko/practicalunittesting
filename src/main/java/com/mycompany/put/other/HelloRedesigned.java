@@ -1,7 +1,5 @@
 package com.mycompany.put.other;
 
-import java.util.Calendar;
-
 public class HelloRedesigned {
 	private TimeProvider timeProvider;
 

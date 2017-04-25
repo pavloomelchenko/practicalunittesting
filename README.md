@@ -1,12 +1,16 @@
-This project was written while reading book 'Practical unit testing with JUnit and Mockito' by Tomek Kaczanowski,
-it contains tests from exercises given in book.
-
-It actually can contain some mistakes, but general picture of the project seems to be pretty good, tests are short,
-cover most cases, functionalities implemented are also short.
-
-I was looking for good examples how to test for months, because on my job we don't write tests.
-And when I started occasionally to write some, I always got bad feeling about it, I felt no profit from writing
-tests at all. So once on SO I stumbled upon this book, and it very helped me to understand, answered 
-many questions and gave good practice.
+This project contains all written by myself exercises from book 'Practical unit testing with JUnit and Mockito' (2013) by Tomek Kaczanowski.
 
 
+Some basic unit testing techniques you can find here:
+BookingSystemRevisitedTest.java, RaceResultsServiceTest.java, HashMapTest.java, HelpDeskTest.java, etc.
+
+Besides basic techniques it contains:
+Parametrized tests(ex. BookingSystemTest, FahrenheitCelciusConverterTest, PasswordValidatorTest, etc)
+Time testing(ex. TimeProviderImplTest)
+Multithreading testing (AtomicIdGeneratorParallelTest)
+Written some code using TDD (BookingSystemRevisitedTest and com.mycompany.put.bookingrevisited.BookingSystem)
+Legacy code testing techniques (MailClientRedesignedArgumentsTest,MainClientPowerMockTest)
+JUnit enhanced features (custom matchers - OperatingSystemTest, custom test execution listeners - TimeTestListener,
+custom junit annotations - EnhancedRetryTest)
+
+Important to understand that classes under test here DO NOT include full functionality. They were implemented for SOLE PURPOSE: learn best practices of testing.

@@ -5,13 +5,15 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Rule;
 import org.junit.Test;
 
+import com.mycompany.put.utils.RetryTestRule;
+
 public class RetryRuleTest {
 	@Rule
 	public RetryTestRule retryTestRule = new RetryTestRule();
-	static int executionNumber = 0;
+	private static int executionNumber = 0;
 
 	@Test
-	
+
 	public void shouldBeRerun() {
 		executionNumber++;
 		System.out.println("execution: " + executionNumber);

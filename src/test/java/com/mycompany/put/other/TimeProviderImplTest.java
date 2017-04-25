@@ -1,6 +1,7 @@
 package com.mycompany.put.other;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.doCallRealMethod;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
@@ -10,7 +11,7 @@ import java.util.Calendar;
 import org.junit.Test;
 
 public class TimeProviderImplTest {
-	TimeProvider provider = mock(TimeProviderImpl.class);
+	private TimeProvider provider = mock(TimeProviderImpl.class);
 
 	@Test
 	public void shouldAnswerThatItIsMorningIfHourOfDayIsLessThan12Hours() {

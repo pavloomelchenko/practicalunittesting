@@ -17,20 +17,18 @@ public class MainClientPowerMockTest {
 	MailClient sut = new MailClient();
 
 	Email email = new Email("address", "title", "body");
-	// verify send method called
-	// verify creation of email
 
 	/*
 	 * This test uses equals on verify. It also uses powermock features to
 	 * verify static method call.
 	 */
 	@Test
-	public void verifyMailClientSendsEmailUsingEquals() throws Exception {
+	public void verifyMailClientSendsEmailUsingEquals()
+			throws Exception {
 		PowerMockito.mockStatic(EmailServer.class);
 		sut.sendEmail("address", "title", "body");
 		PowerMockito.verifyStatic(times(1));
 		EmailServer.sendEmail(email);
 	}
-
 
 }

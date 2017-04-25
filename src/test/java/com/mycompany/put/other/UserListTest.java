@@ -9,27 +9,28 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
 
 public class UserListTest {
-	UserList userList = new UserList();
-	
+	private UserList userList = new UserList();
+
 	@Test
 	public void anEmptyListOfUsersIsReturnedIfNoUsersHaveBeenAdded() {
 		assertTrue(userList.getUsers().isEmpty());
 	}
-	
+
 	@Test
-	public void oneUserIsReturnedIfOnlyOneHasBeenAdded(){
+	public void oneUserIsReturnedIfOnlyOneHasBeenAdded() {
 		User user = mock(User.class);
 		userList.addUser(user);
-		assertTrue(CollectionUtils.isEqualCollection(Arrays.asList(user), userList.getUsers()));
+		assertTrue(CollectionUtils.isEqualCollection(
+				Arrays.asList(user), userList.getUsers()));
 	}
-	
+
 	@Test
-	public void twoUsersAreReturnedIfTwoHaveBeenAdded(){
+	public void twoUsersAreReturnedIfTwoHaveBeenAdded() {
 		User user = mock(User.class);
 		User user2 = mock(User.class);
 		userList.addUser(user);
 		userList.addUser(user2);
-		assertTrue(CollectionUtils.isEqualCollection(Arrays.asList(user, user2), userList.getUsers()));
+		assertTrue(CollectionUtils.isEqualCollection(
+				Arrays.asList(user, user2), userList.getUsers()));
 	}
 }
-

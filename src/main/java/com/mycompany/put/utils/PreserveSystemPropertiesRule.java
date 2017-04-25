@@ -1,4 +1,4 @@
-package com.mycompany.put.test.utils;
+package com.mycompany.put.utils;
 
 import java.util.Properties;
 
@@ -8,7 +8,7 @@ import org.junit.runners.model.Statement;
 
 public class PreserveSystemPropertiesRule implements TestRule {
 
-	Properties beforeExecution;
+	private Properties beforeExecution;
 
 	@Override
 	public Statement apply(Statement base, Description description) {
@@ -16,8 +16,10 @@ public class PreserveSystemPropertiesRule implements TestRule {
 			@Override
 			public void evaluate() throws Throwable {
 				beforeExecution = new Properties();
-				for (Object property : System.getProperties().keySet()) {
-					beforeExecution.setProperty(property.toString(), System.getProperty(property.toString()));
+				for (Object property : System.getProperties()
+						.keySet()) {
+					beforeExecution.setProperty(property.toString(),
+							System.getProperty(property.toString()));
 				}
 				base.evaluate();
 				System.setProperties(beforeExecution);

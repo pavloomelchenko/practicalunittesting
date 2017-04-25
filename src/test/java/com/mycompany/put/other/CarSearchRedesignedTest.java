@@ -12,8 +12,8 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
 
 public class CarSearchRedesignedTest {
-	CarSearchRedesigned sut = new CarSearchRedesigned();
-	List<Car> carList = new ArrayList<Car>();
+	private CarSearchRedesigned sut = new CarSearchRedesigned();
+	private List<Car> carList = new ArrayList<Car>();
 
 	private Car nonSportCar() {
 		Car car = mock(Car.class);
@@ -36,14 +36,16 @@ public class CarSearchRedesignedTest {
 
 	@Test
 	public void searchShouldReturnZeroSportCarsWhenNoCarsAdded() {
-		assertTrue(CollectionUtils.isEqualCollection(carList, sut.findSportCars()));
+		assertTrue(CollectionUtils.isEqualCollection(carList,
+				sut.findSportCars()));
 	}
 
 	@Test
 	public void searchShouldReturnZeroSportCarsWhenOnlyNonSportCarsAdded() {
 		Car c = nonSportCar();
 		sut.addCar(c);
-		assertTrue(CollectionUtils.isEqualCollection(carList, sut.findSportCars()));
+		assertTrue(CollectionUtils.isEqualCollection(carList,
+				sut.findSportCars()));
 	}
 
 }

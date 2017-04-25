@@ -1,11 +1,12 @@
 package com.mycompany.put.other;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
 
 public class StackTest {
-	Stack sut = new Stack();
+	private Stack sut = new Stack();
 
 	@Test
 	public void shouldPopNullWhenEmpty() {

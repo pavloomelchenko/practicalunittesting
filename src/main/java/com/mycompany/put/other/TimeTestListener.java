@@ -8,19 +8,30 @@ import org.junit.runner.Description;
 
 import com.mycompany.put.utils.Utils;
 
+/**
+ * Custom JUnit listener to receive more detailed feedback about tests
+ * 
+ * @author Pavlo Omelchenko
+ *
+ */
 public class TimeTestListener extends TestWatcher {
 	protected static Map<String, Long> startTimes = new HashMap<>();
 	protected static Map<String, TestEntry> testEntries = new HashMap<>();
 
 	@Override
 	protected void starting(Description description) {
-		String testName = description.getTestClass().getSimpleName() + "." + description.getMethodName();
+		String testName = description.getTestClass().getSimpleName()
+				+ "." + description.getMethodName();
 		startTimes.put(testName, System.currentTimeMillis());
 	}
 
-	protected void saveExecutionTime(String result, Description description) {
-		String testName = description.getTestClass().getSimpleName() + "." + description.getMethodName();
-		TestEntry test = new TestEntry(testName, System.currentTimeMillis() - startTimes.get(testName), result);
+	protected void saveExecutionTime(String result,
+			Description description) {
+		String testName = description.getTestClass().getSimpleName()
+				+ "." + description.getMethodName();
+		TestEntry test = new TestEntry(testName,
+				System.currentTimeMillis() - startTimes.get(testName),
+				result);
 		testEntries.put(testName, test);
 	}
 
@@ -36,12 +47,13 @@ public class TimeTestListener extends TestWatcher {
 
 }
 
-class TestEntry implements Comparable<TestEntry>{
+class TestEntry implements Comparable<TestEntry> {
 	String classMethodName;
 	long executionTime;
 	String result;
 
-	public TestEntry(String classMethodName, long executionTime, String result) {
+	public TestEntry(String classMethodName, long executionTime,
+			String result) {
 		super();
 		this.classMethodName = classMethodName;
 		this.executionTime = executionTime;
@@ -49,7 +61,8 @@ class TestEntry implements Comparable<TestEntry>{
 	}
 
 	public String printResult() {
-		return String.format("%-4s %-50s %-8s", result, classMethodName, Utils.formatMillis(executionTime));
+		return String.format("%-4s %-50s %-8s", result, classMethodName,
+				Utils.formatMillis(executionTime));
 	}
 
 	@Override

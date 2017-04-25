@@ -1,11 +1,19 @@
 package com.mycompany.put.test.utils;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 
+import com.mycompany.put.utils.RetryTest;
+import com.mycompany.put.utils.RetryTestEnhancedRule;
+
+/**
+ * Custom JUnit annotation implemented - @RetryRule
+ * 
+ * @author Pavlo Omelchenko
+ *
+ */
 public class EnhancedRetryTest {
 	@Rule
 	public RetryTestEnhancedRule retryTestRule = new RetryTestEnhancedRule();

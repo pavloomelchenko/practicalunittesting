@@ -19,7 +19,7 @@ public class MailClientPartialTest {
 	// verify send method called
 
 	@Test
-	public void verifyMailClientSendsEmailPowerMock() throws Exception {
+	public void verifyMailClientSendsEmail() throws Exception {
 		doReturn(emailServer).when(sut).createEmailServer();
 		sut.sendEmail(email);
 		verify(emailServer).sendEmail(email);

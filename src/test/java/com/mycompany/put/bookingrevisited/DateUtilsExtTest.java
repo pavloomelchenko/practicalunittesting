@@ -9,12 +9,12 @@ import org.junit.Test;
 
 public class DateUtilsExtTest {
 	@Test
-	public void givenNotStartOfHourIsStartOfHourShouldReturnFalse(){
+	public void givenNotStartOfHourWhenValidateStartOfHourThenReturnFalse(){
 		assertFalse(DateUtilsExt.isStartOfHour(new Date()));
 	}
 	
 	@Test
-	public void givenStartOfHourIsStartOfHourShouldReturnTrue(){
+	public void givenStartOfHourWhenValidateStartOfHourThenReturnTrue(){
 		assertTrue(DateUtilsExt.isStartOfHour(DateUtilsExt.truncate(new Date())));
 	}
 }

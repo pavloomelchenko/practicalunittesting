@@ -2,8 +2,7 @@ package com.mycompany.put.other;
 
 import java.util.Collection;
 import java.util.HashSet;
-
-import com.mycompany.put.exceptions.NoSuchItemException;
+import java.util.NoSuchElementException;
 
 public class Fridge {
 	private Collection<String> food = new HashSet<String>();
@@ -16,10 +15,11 @@ public class Fridge {
 		return food.contains(item);
 	}
 
-	public void take(String item) throws NoSuchItemException {
+	public void take(String item) {
 		boolean result = food.remove(item);
 		if (!result) {
-			throw new NoSuchItemException(item + " not found in the fridge");
+			throw new NoSuchElementException(
+					item + " not found in the fridge");
 		}
 	}
 }

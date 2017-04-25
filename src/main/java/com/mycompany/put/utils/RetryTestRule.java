@@ -1,4 +1,4 @@
-package com.mycompany.put.test.utils;
+package com.mycompany.put.utils;
 
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;

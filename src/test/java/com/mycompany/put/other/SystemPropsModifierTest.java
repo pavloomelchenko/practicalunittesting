@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Rule;
 import org.junit.Test;
 
-import com.mycompany.put.test.utils.PreserveSystemPropertiesRule;
+import com.mycompany.put.utils.PreserveSystemPropertiesRule;
 
 public class SystemPropsModifierTest {
 

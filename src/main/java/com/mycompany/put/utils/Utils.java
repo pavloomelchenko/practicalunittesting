@@ -3,7 +3,7 @@ package com.mycompany.put.utils;
 import org.apache.commons.lang3.StringUtils;
 
 public class Utils {
-	public static String name(String input){
+	public static String camelCaseSentence(String input){
 		String[] arr = input.split(" ");
 		StringBuilder builder = new StringBuilder();
 		for (int i = 0; i < arr.length; i++) {

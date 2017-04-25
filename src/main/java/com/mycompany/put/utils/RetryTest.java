@@ -1,4 +1,4 @@
-package com.mycompany.put.test.utils;
+package com.mycompany.put.utils;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

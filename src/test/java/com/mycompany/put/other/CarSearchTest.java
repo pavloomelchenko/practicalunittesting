@@ -1,6 +1,7 @@
 package com.mycompany.put.other;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -12,8 +13,8 @@ import org.junit.Test;
 
 public class CarSearchTest {
 
-	CarSearch sut = new CarSearch();
-	List<Car> carList = new ArrayList<Car>();
+	private CarSearch sut = new CarSearch();
+	private List<Car> carList = new ArrayList<Car>();
 
 	private Car nonSportCar() {
 		Engine engine = mock(Engine.class);
@@ -45,14 +46,16 @@ public class CarSearchTest {
 
 	@Test
 	public void searchShouldReturnZeroSportCarsWhenNoCarsAdded() {
-		assertTrue(CollectionUtils.isEqualCollection(carList, sut.findSportCars()));
+		assertTrue(CollectionUtils.isEqualCollection(carList,
+				sut.findSportCars()));
 	}
 
 	@Test
 	public void searchShouldReturnZeroSportCarsWhenOnlyNonSportCarsAdded() {
 		Car c = nonSportCar();
 		sut.addCar(c);
-		assertTrue(CollectionUtils.isEqualCollection(carList, sut.findSportCars()));
+		assertTrue(CollectionUtils.isEqualCollection(carList,
+				sut.findSportCars()));
 	}
-	
+
 }

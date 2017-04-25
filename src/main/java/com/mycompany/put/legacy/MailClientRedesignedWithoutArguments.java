@@ -1,9 +1,9 @@
 package com.mycompany.put.legacy;
 
-public class MailClientRedesignedWoArguments {
+public class MailClientRedesignedWithoutArguments {
 	private EmailServerRedesigned emailServer;
 
-	public MailClientRedesignedWoArguments(EmailServerRedesigned emailServer) {
+	public MailClientRedesignedWithoutArguments(EmailServerRedesigned emailServer) {
 		super();
 		this.emailServer = emailServer;
 	}
