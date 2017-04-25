@@ -11,8 +11,7 @@ public class UtilsTest {
 	@Test
 	public void shouldCamelCaseSentence() {
 		String s = "one user is returned if only one has been added";
-		assertEquals("oneUserIsReturnedIfOnlyOneHasBeenAdded",
-				Utils.camelCaseSentence(s));
+		assertEquals("oneUserIsReturnedIfOnlyOneHasBeenAdded", Utils.camelCaseSentence(s));
 	}
 
 }

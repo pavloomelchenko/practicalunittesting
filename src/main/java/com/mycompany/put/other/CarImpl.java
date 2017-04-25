@@ -5,8 +5,7 @@ public class CarImpl implements Car {
 	private Color color;
 	private Manufacturer manufacturer;
 
-	public CarImpl(Engine engine, Color color,
-			Manufacturer manufacturer) {
+	public CarImpl(Engine engine, Color color, Manufacturer manufacturer) {
 		super();
 		this.engine = engine;
 		this.color = color;
@@ -42,14 +41,13 @@ public class CarImpl implements Car {
 
 	@Override
 	public String toString() {
-		return "CarImpl [engine=" + engine + ", color=" + color
-				+ ", manufacturer=" + manufacturer + "]";
+		return "CarImpl [engine=" + engine + ", color=" + color + ", manufacturer=" + manufacturer
+				+ "]";
 	}
 
 	@Override
 	public boolean isSportCar() {
-		if (getEngine().getNbOfCylinders() > 6
-				&& Color.RED == getColor()
+		if (getEngine().getNbOfCylinders() > 6 && Color.RED == getColor()
 				&& "Ferrari".equals(getManufacturer().getName())) {
 			return true;
 		}
@@ -60,12 +58,9 @@ public class CarImpl implements Car {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ ((color == null) ? 0 : color.hashCode());
-		result = prime * result
-				+ ((engine == null) ? 0 : engine.hashCode());
-		result = prime * result + ((manufacturer == null) ? 0
-				: manufacturer.hashCode());
+		result = prime * result + ((color == null) ? 0 : color.hashCode());
+		result = prime * result + ((engine == null) ? 0 : engine.hashCode());
+		result = prime * result + ((manufacturer == null) ? 0 : manufacturer.hashCode());
 		return result;
 	}
 

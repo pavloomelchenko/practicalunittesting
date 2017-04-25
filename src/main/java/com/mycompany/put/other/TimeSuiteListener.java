@@ -14,7 +14,7 @@ public class TimeSuiteListener extends TestWatcher {
 		List<TestEntry> tests = new ArrayList<>(TimeTestListener.testEntries.values());
 		Collections.sort(tests, Collections.reverseOrder());
 		tests.forEach(v -> {
-			
+
 			System.out.println(v.printResult());
 		});
 	}

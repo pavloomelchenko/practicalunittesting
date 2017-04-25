@@ -18,8 +18,7 @@ public class Fridge {
 	public void take(String item) {
 		boolean result = food.remove(item);
 		if (!result) {
-			throw new NoSuchElementException(
-					item + " not found in the fridge");
+			throw new NoSuchElementException(item + " not found in the fridge");
 		}
 	}
 }

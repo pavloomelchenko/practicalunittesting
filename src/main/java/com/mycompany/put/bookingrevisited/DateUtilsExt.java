@@ -16,7 +16,8 @@ public class DateUtilsExt {
 	public static boolean isStartOfHour(Date date) {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
-		if (cal.get(Calendar.MINUTE) == 0 && cal.get(Calendar.SECOND) == 0 && cal.get(Calendar.MILLISECOND) == 0)
+		if (cal.get(Calendar.MINUTE) == 0 && cal.get(Calendar.SECOND) == 0
+				&& cal.get(Calendar.MILLISECOND) == 0)
 			return true;
 		return false;
 	}

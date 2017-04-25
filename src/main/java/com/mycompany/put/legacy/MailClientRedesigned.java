@@ -11,5 +11,4 @@ public class MailClientRedesigned {
 		emailServer.sendEmail(email);
 	}
 
-
 }

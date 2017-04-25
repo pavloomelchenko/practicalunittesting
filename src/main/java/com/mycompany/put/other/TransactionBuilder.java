@@ -27,8 +27,8 @@ public class TransactionBuilder {
 	public TransactionBuilder withBillingId(String billingId) {
 		return this;
 	}
-	
-	public Transaction build(){
+
+	public Transaction build() {
 		return new Transaction(id, state, retryAllowed, message, billingId);
 	}
 }

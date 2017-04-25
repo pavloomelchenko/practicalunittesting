@@ -16,8 +16,7 @@ public class PreserveSystemPropertiesRule implements TestRule {
 			@Override
 			public void evaluate() throws Throwable {
 				beforeExecution = new Properties();
-				for (Object property : System.getProperties()
-						.keySet()) {
+				for (Object property : System.getProperties().keySet()) {
 					beforeExecution.setProperty(property.toString(),
 							System.getProperty(property.toString()));
 				}

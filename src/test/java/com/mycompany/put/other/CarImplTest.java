@@ -28,7 +28,7 @@ public class CarImplTest {
 		CarImpl car = sportCar();
 		Manufacturer manufacturer = mock(Manufacturer.class);
 		when(manufacturer.getName()).thenReturn("Audi");
-		car.setManufacturer(manufacturer );
+		car.setManufacturer(manufacturer);
 		assertFalse(car.isSportCar());
 	}
 

@@ -14,8 +14,7 @@ public class BookingSystem {
 		if (sampleHour < 0 || sampleHour > 24)
 			throw new RuntimeException("Invalid input");
 		if (bookedHours[sampleHour])
-			throw new RuntimeException(
-					"Not allowed a particular hour to be double-booked");
+			throw new RuntimeException("Not allowed a particular hour to be double-booked");
 		bookedHours[sampleHour] = true;
 	}
 

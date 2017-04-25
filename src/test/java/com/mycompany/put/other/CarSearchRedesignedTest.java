@@ -36,16 +36,14 @@ public class CarSearchRedesignedTest {
 
 	@Test
 	public void searchShouldReturnZeroSportCarsWhenNoCarsAdded() {
-		assertTrue(CollectionUtils.isEqualCollection(carList,
-				sut.findSportCars()));
+		assertTrue(CollectionUtils.isEqualCollection(carList, sut.findSportCars()));
 	}
 
 	@Test
 	public void searchShouldReturnZeroSportCarsWhenOnlyNonSportCarsAdded() {
 		Car c = nonSportCar();
 		sut.addCar(c);
-		assertTrue(CollectionUtils.isEqualCollection(carList,
-				sut.findSportCars()));
+		assertTrue(CollectionUtils.isEqualCollection(carList, sut.findSportCars()));
 	}
 
 }

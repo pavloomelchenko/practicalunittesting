@@ -71,8 +71,7 @@ public class FridgeTest {
 	@Test
 	public void shouldThrowExceptionIfTakeNonExistentProduct() {
 		expectedEx.expect(NoSuchElementException.class);
-		expectedEx.expectMessage(
-				ANY_PRODUCT + " not found in the fridge");
+		expectedEx.expectMessage(ANY_PRODUCT + " not found in the fridge");
 		sut.take(ANY_PRODUCT);
 	}
 

@@ -29,8 +29,8 @@ public class HashMapTest {
 
 	@Test
 	@Parameters(method = "validParams")
-	public void addingASecondObjectWithTheSameKeyResultsInTheOldValueBeingReplaced(
-			String key, String value) {
+	public void addingASecondObjectWithTheSameKeyResultsInTheOldValueBeingReplaced(String key,
+			String value) {
 		map.put(key, "1");
 		assertEquals("1", map.get(key));
 		map.put(key, "2");
@@ -39,8 +39,7 @@ public class HashMapTest {
 
 	@Test
 	@Parameters(method = "validParams")
-	public void theClearMethodRemovesAllItsContent(String key,
-			String value) {
+	public void theClearMethodRemovesAllItsContent(String key, String value) {
 		map.put(key, "1");
 		map.clear();
 		assertEquals(0, map.size());

@@ -5,6 +5,7 @@ import java.util.Date;
 public class Message {
 	private String text;
 	private Date date;
+
 	public Date getDate() {
 		return date;
 	}

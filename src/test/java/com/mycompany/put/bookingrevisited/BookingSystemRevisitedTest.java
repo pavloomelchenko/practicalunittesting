@@ -51,8 +51,7 @@ public class BookingSystemRevisitedTest {
 	@Test
 	public void shouldNotAllowBookTwice() {
 		expectedEx.expect(BookingException.class);
-		expectedEx.expectMessage(
-				"Date is booked or not enough range (before next booking) ");
+		expectedEx.expectMessage("Date is booked or not enough range (before next booking) ");
 		bookingSystem.book(sampleDate, classroomId, hoursAmount);
 		bookingSystem.book(sampleDate, classroomId, hoursAmount);
 	}
@@ -60,8 +59,8 @@ public class BookingSystemRevisitedTest {
 	@Test
 	public void whenBookClassroomRemoveOldBookings() {
 		Date outdatedDateNotTruncated = new Date();
-		Date outdatedDate = DateUtilsExt.truncate(
-				new Date(outdatedDateNotTruncated.getTime() - 3600000));
+		Date outdatedDate = DateUtilsExt
+				.truncate(new Date(outdatedDateNotTruncated.getTime() - 3600000));
 		bookingSystem.book(outdatedDate, classroomId, hoursAmount);
 		bookingSystem.book(sampleDate, classroomId, hoursAmount);
 		assertFalse(bookingSystem.isBooked(outdatedDate, classroomId));
@@ -70,8 +69,7 @@ public class BookingSystemRevisitedTest {
 	@Test
 	public void shouldAllowBookOnlyForStartOfHour() {
 		expectedEx.expect(BookingException.class);
-		expectedEx.expectMessage(
-				"Given invalid date, only start an hour is acceptable");
+		expectedEx.expectMessage("Given invalid date, only start an hour is acceptable");
 		bookingSystem.book(new Date(), classroomId, hoursAmount);
 	}
 
@@ -80,8 +78,7 @@ public class BookingSystemRevisitedTest {
 		long notExistingClassroomId = -1;
 		expectedEx.expect(BookingException.class);
 		expectedEx.expectMessage("Invalid classroom");
-		bookingSystem.book(sampleDate, notExistingClassroomId,
-				hoursAmount);
+		bookingSystem.book(sampleDate, notExistingClassroomId, hoursAmount);
 	}
 
 	@Test
@@ -100,8 +97,7 @@ public class BookingSystemRevisitedTest {
 	@Test
 	public void eachBookingOperationShouldBeWrittenToLogs() {
 		bookingSystem.book(sampleDate, classroomId, hoursAmount);
-		verify(log).log(
-				"Booked " + sampleDate + " classroom" + classroomId);
+		verify(log).log("Booked " + sampleDate + " classroom" + classroomId);
 	}
 
 }

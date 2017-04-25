@@ -9,8 +9,7 @@ import org.fest.assertions.GenericAssert;
  * @author Pavlo Omelchenko
  *
  */
-public class OperatingSystemAssert
-		extends GenericAssert<OperatingSystemAssert, OperatingSystem> {
+public class OperatingSystemAssert extends GenericAssert<OperatingSystemAssert, OperatingSystem> {
 
 	protected OperatingSystemAssert(OperatingSystem actual) {
 		super(OperatingSystemAssert.class, actual);
@@ -23,8 +22,8 @@ public class OperatingSystemAssert
 
 	public OperatingSystemAssert is64bit() {
 		String errorMessage = "Expected operating system to be 64 bit";
-		Assertions.assertThat(actual.getNbOfBits())
-				.overridingErrorMessage(errorMessage).isEqualTo(64);
+		Assertions.assertThat(actual.getNbOfBits()).overridingErrorMessage(errorMessage)
+				.isEqualTo(64);
 		return this;
 	}
 

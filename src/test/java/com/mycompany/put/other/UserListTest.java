@@ -20,8 +20,7 @@ public class UserListTest {
 	public void oneUserIsReturnedIfOnlyOneHasBeenAdded() {
 		User user = mock(User.class);
 		userList.addUser(user);
-		assertTrue(CollectionUtils.isEqualCollection(
-				Arrays.asList(user), userList.getUsers()));
+		assertTrue(CollectionUtils.isEqualCollection(Arrays.asList(user), userList.getUsers()));
 	}
 
 	@Test
@@ -30,7 +29,7 @@ public class UserListTest {
 		User user2 = mock(User.class);
 		userList.addUser(user);
 		userList.addUser(user2);
-		assertTrue(CollectionUtils.isEqualCollection(
-				Arrays.asList(user, user2), userList.getUsers()));
+		assertTrue(
+				CollectionUtils.isEqualCollection(Arrays.asList(user, user2), userList.getUsers()));
 	}
 }

@@ -7,8 +7,8 @@ public class Transaction {
 	private String message;
 	private String billingId;
 
-	public Transaction(long id, State state, boolean retryAllowed,
-			String message, String billingId) {
+	public Transaction(long id, State state, boolean retryAllowed, String message,
+			String billingId) {
 		super();
 		this.id = id;
 		this.state = state;

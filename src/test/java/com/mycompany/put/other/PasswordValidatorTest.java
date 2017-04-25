@@ -19,19 +19,15 @@ public class PasswordValidatorTest {
 	private PasswordValidator passwordValidator = new PasswordValidator();
 
 	private Object params() {
-		return new Object[] {
-				new Object[] { "Password doesn't match required length",
-						"pwd" },
-				new Object[] { "Password doesn't have enough digits",
-						"pwdpwd" },
-				new Object[] { "Password doesn't contain underscore",
-						"pwdpwd12" } };
+		return new Object[] { new Object[] { "Password doesn't match required length", "pwd" },
+				new Object[] { "Password doesn't have enough digits", "pwdpwd" },
+				new Object[] { "Password doesn't contain underscore", "pwdpwd12" } };
 	}
 
 	@Test
 	@Parameters(method = "params")
-	public void ifDoesntMetRequiredConditionAppropriateMessageShouldBeThrown(
-			String message, String password) {
+	public void ifDoesntMetRequiredConditionAppropriateMessageShouldBeThrown(String message,
+			String password) {
 		expectedEx.expect(IllegalArgumentException.class);
 		expectedEx.expectMessage(message);
 		passwordValidator.validate(password);

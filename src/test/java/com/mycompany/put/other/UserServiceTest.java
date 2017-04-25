@@ -15,8 +15,7 @@ public class UserServiceTest {
 		UserDAO dao = mock(UserDAO.class);
 		SecurityService security = mock(SecurityService.class);
 		User user = mock(User.class);
-		UserServiceImpl userService = new UserServiceImpl(dao,
-				security);
+		UserServiceImpl userService = new UserServiceImpl(dao, security);
 
 		doReturn(SAMPLE_STRING).when(security).md5(anyString());
 		doReturn(SAMPLE_STRING).when(user).getPassword();

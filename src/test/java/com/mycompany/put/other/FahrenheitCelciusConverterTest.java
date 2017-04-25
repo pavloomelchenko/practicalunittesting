@@ -23,8 +23,9 @@ public class FahrenheitCelciusConverterTest {
 	public void shouldConvertFahrenheitToCelcius(int c, int f) {
 		assertEquals(c, FahrenheitCelciusConverter.toCelcius(f));
 	}
-	
+
 	private Object validParams() {
-		return new Object[] { new Object[] { 0,32 }, new Object[] { 35,95 }, new Object[] { 100,212 } };
+		return new Object[] { new Object[] { 0, 32 }, new Object[] { 35, 95 },
+				new Object[] { 100, 212 } };
 	}
 }

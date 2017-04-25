@@ -7,7 +7,7 @@ public class User {
 	}
 
 	public void setPassword(String passwordMd5) {
-		
+
 	}
 
 }

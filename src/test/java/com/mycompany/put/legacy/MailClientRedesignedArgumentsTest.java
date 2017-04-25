@@ -8,8 +8,7 @@ import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 
 public class MailClientRedesignedArgumentsTest {
-	private EmailServerRedesigned emailServer = mock(
-			EmailServerRedesigned.class);
+	private EmailServerRedesigned emailServer = mock(EmailServerRedesigned.class);
 	private MailClientRedesignedWithoutArguments sut = new MailClientRedesignedWithoutArguments(
 			emailServer);
 
@@ -22,11 +21,9 @@ public class MailClientRedesignedArgumentsTest {
 	}
 
 	@Test
-	public void verifyMailClientSendsEmailArgumentCaptor()
-			throws Exception {
+	public void verifyMailClientSendsEmailArgumentCaptor() throws Exception {
 		sut.sendEmail("address", "title", "body");
-		ArgumentCaptor<EmailWithoutEquals> arg = ArgumentCaptor
-				.forClass(EmailWithoutEquals.class);
+		ArgumentCaptor<EmailWithoutEquals> arg = ArgumentCaptor.forClass(EmailWithoutEquals.class);
 		verify(emailServer).sendEmail(arg.capture());
 		Email argEmail = arg.getValue();
 		assertEquals("address", argEmail.getAddress());

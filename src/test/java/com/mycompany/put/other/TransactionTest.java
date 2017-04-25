@@ -11,22 +11,19 @@ public class TransactionTest {
 	private String billingId = "0";
 
 	private TransactionBuilder sampleTransaction() {
-		return new TransactionBuilder().withBillingId(billingId)
-				.withId(id).withRetryAllowed(retryAllowed)
-				.withMessage(message);
+		return new TransactionBuilder().withBillingId(billingId).withId(id)
+				.withRetryAllowed(retryAllowed).withMessage(message);
 	}
 
 	@Test
 	public void creatingProcessingTransactionUsingRegularApproach() {
-		Transaction sut = new Transaction(id, State.PROCESSING,
-				retryAllowed, message, billingId);
+		Transaction sut = new Transaction(id, State.PROCESSING, retryAllowed, message, billingId);
 		assertEquals(State.PROCESSING, sut.getState());
 	}
 
 	@Test
 	public void creatingProcessingTransactionUsingBuilderPattern() {
-		Transaction sut = sampleTransaction()
-				.withState(State.PROCESSING).build();
+		Transaction sut = sampleTransaction().withState(State.PROCESSING).build();
 		assertEquals(State.PROCESSING, sut.getState());
 	}
 

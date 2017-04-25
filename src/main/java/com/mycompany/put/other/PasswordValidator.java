@@ -7,16 +7,13 @@ public class PasswordValidator {
 
 	public boolean validate(String passwordToValidate) {
 		if (passwordToValidate.length() < REQUIRED_LENGTH) {
-			throw new IllegalArgumentException(
-					"Password doesn't match required length");
+			throw new IllegalArgumentException("Password doesn't match required length");
 		}
 		if (getDigitsNumber(passwordToValidate) < REQUIRED_DIGITS) {
-			throw new IllegalArgumentException(
-					"Password doesn't have enough digits");
+			throw new IllegalArgumentException("Password doesn't have enough digits");
 		}
 		if (!containsUnderscore(passwordToValidate)) {
-			throw new IllegalArgumentException(
-					"Password doesn't contain underscore");
+			throw new IllegalArgumentException("Password doesn't contain underscore");
 		}
 		return false;
 	}

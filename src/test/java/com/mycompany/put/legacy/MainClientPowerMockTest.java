@@ -23,8 +23,7 @@ public class MainClientPowerMockTest {
 	 * verify static method call.
 	 */
 	@Test
-	public void verifyMailClientSendsEmailUsingEquals()
-			throws Exception {
+	public void verifyMailClientSendsEmailUsingEquals() throws Exception {
 		PowerMockito.mockStatic(EmailServer.class);
 		sut.sendEmail("address", "title", "body");
 		PowerMockito.verifyStatic(times(1));

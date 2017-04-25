@@ -28,12 +28,11 @@ public class BookingSystem {
 	private LogService log;
 
 	public BookingSystem(List<Classroom> list, LogService log) {
-		this.classrooms = list.stream().collect(Collectors
-				.toMap(Classroom::getId, Function.identity()));
+		this.classrooms = list.stream()
+				.collect(Collectors.toMap(Classroom::getId, Function.identity()));
 		this.log = log;
 		list.forEach(classroom -> {
-			bookingMap.put(classroom.getId(),
-					new TreeSet<BookingEntry>());
+			bookingMap.put(classroom.getId(), new TreeSet<BookingEntry>());
 		});
 	}
 
@@ -47,11 +46,9 @@ public class BookingSystem {
 			throw new BookingException("Invalid classroom");
 		}
 		if (!canBook(sampleDate, classroom, hours)) {
-			throw new BookingException(
-					"Date is booked or not enough range (before next booking) ");
+			throw new BookingException("Date is booked or not enough range (before next booking) ");
 		}
-		bookingMap.get(classroom)
-				.add(new BookingEntry(sampleDate, hours));
+		bookingMap.get(classroom).add(new BookingEntry(sampleDate, hours));
 		log.log("Booked " + sampleDate + " classroom" + classroom);
 	}
 
@@ -69,8 +66,7 @@ public class BookingSystem {
 			return true;
 		}
 		// else iterate over existing bookings
-		Iterator<BookingEntry> itr = bookingMap.get(classroom)
-				.iterator();
+		Iterator<BookingEntry> itr = bookingMap.get(classroom).iterator();
 		while (itr.hasNext()) {
 			BookingEntry iterBooking = itr.next();
 			// if booking under iteration is now
@@ -99,8 +95,7 @@ public class BookingSystem {
 		if (!classrooms.containsKey(classroomId)) {
 			throw new BookingException("Invalid classroom");
 		}
-		Iterator<BookingEntry> itr = bookingMap.get(classroomId)
-				.iterator();
+		Iterator<BookingEntry> itr = bookingMap.get(classroomId).iterator();
 		while (itr.hasNext()) {
 			BookingEntry iterBooking = itr.next();
 			if (date.equals(iterBooking.getStartTime())) {
@@ -112,15 +107,13 @@ public class BookingSystem {
 
 	private void validateHours(int hours) {
 		if (hours > 24 || hours < 1) {
-			throw new BookingException(
-					"Can book only from 1 to 24 hours");
+			throw new BookingException("Can book only from 1 to 24 hours");
 		}
 	}
 
 	private boolean current(BookingEntry be) {
 		Date now = new Date();
-		if (be.getStartTime().before(now)
-				&& be.getEndTime().after(now)) {
+		if (be.getStartTime().before(now) && be.getEndTime().after(now)) {
 			return true;
 		}
 		return false;
@@ -149,8 +142,7 @@ public class BookingSystem {
 
 	private void validateDate(Date date) {
 		if (!DateUtilsExt.isStartOfHour(date)) {
-			throw new BookingException(
-					"Given invalid date, only start an hour is acceptable");
+			throw new BookingException("Given invalid date, only start an hour is acceptable");
 		}
 	}
 

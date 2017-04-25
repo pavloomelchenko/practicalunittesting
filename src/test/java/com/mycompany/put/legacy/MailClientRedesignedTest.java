@@ -6,10 +6,8 @@ import static org.mockito.Mockito.verify;
 import org.junit.Test;
 
 public class MailClientRedesignedTest {
-	private EmailServerRedesigned emailServer = mock(
-			EmailServerRedesigned.class);
-	private MailClientRedesigned sut = new MailClientRedesigned(
-			emailServer);
+	private EmailServerRedesigned emailServer = mock(EmailServerRedesigned.class);
+	private MailClientRedesigned sut = new MailClientRedesigned(emailServer);
 
 	private Email email = new Email("address", "title", "body");
 

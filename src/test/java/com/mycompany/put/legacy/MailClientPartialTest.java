@@ -15,7 +15,6 @@ public class MailClientPartialTest {
 
 	Email email = new Email("address", "title", "body");
 
-
 	// verify send method called
 
 	@Test

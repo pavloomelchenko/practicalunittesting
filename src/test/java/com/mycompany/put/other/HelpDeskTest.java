@@ -25,8 +25,7 @@ public class HelpDeskTest {
 	}
 
 	private static final Object[] workdays() {
-		return new Object[] { Calendar.MONDAY, Calendar.TUESDAY,
-				Calendar.FRIDAY };
+		return new Object[] { Calendar.MONDAY, Calendar.TUESDAY, Calendar.FRIDAY };
 	}
 
 	private static final Object[] fridayWorkingHours() {
@@ -53,8 +52,7 @@ public class HelpDeskTest {
 
 	@Test
 	@Parameters(method = "fridayWorkingHours")
-	public void shouldHandleIssueBeforeEOBHourInFriday(
-			int workingHour) {
+	public void shouldHandleIssueBeforeEOBHourInFriday(int workingHour) {
 		Calendar cal = Calendar.getInstance();
 		cal.set(Calendar.DAY_OF_WEEK, Calendar.FRIDAY);
 		cal.set(Calendar.HOUR_OF_DAY, workingHour);

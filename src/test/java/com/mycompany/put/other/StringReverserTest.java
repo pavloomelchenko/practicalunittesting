@@ -12,7 +12,7 @@ import junitparams.Parameters;
 
 @RunWith(JUnitParamsRunner.class)
 public class StringReverserTest {
-	
+
 	@Test
 	@Parameters(method = "validParams")
 	public void stringReverserShouldWorkFineWhenParamsIsValid(String expected, String inputSt) {
@@ -22,8 +22,8 @@ public class StringReverserTest {
 	private Object validParams() {
 		return new Object[] { new Object[] { "fdsa", "asdf" }, new Object[] { "", "" } };
 	}
-	
-	@Test(expected=NullPointerException.class)
+
+	@Test(expected = NullPointerException.class)
 	public void stringReverserShouldThrowNPEWhenInputIsNull() {
 		StringReverser.reverse(null);
 	}

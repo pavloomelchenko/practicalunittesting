@@ -19,8 +19,7 @@ public class RegexDigitProcessor {
 		}
 		StringBuilder b = new StringBuilder(result);
 		if (result.lastIndexOf(",") != -1) {
-			b.replace(result.lastIndexOf(","),
-					result.lastIndexOf(",") + 1, "");
+			b.replace(result.lastIndexOf(","), result.lastIndexOf(",") + 1, "");
 		}
 
 		return b.toString().trim();

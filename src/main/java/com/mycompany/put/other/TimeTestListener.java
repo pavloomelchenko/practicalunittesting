@@ -20,18 +20,16 @@ public class TimeTestListener extends TestWatcher {
 
 	@Override
 	protected void starting(Description description) {
-		String testName = description.getTestClass().getSimpleName()
-				+ "." + description.getMethodName();
+		String testName = description.getTestClass().getSimpleName() + "."
+				+ description.getMethodName();
 		startTimes.put(testName, System.currentTimeMillis());
 	}
 
-	protected void saveExecutionTime(String result,
-			Description description) {
-		String testName = description.getTestClass().getSimpleName()
-				+ "." + description.getMethodName();
+	protected void saveExecutionTime(String result, Description description) {
+		String testName = description.getTestClass().getSimpleName() + "."
+				+ description.getMethodName();
 		TestEntry test = new TestEntry(testName,
-				System.currentTimeMillis() - startTimes.get(testName),
-				result);
+				System.currentTimeMillis() - startTimes.get(testName), result);
 		testEntries.put(testName, test);
 	}
 
@@ -52,8 +50,7 @@ class TestEntry implements Comparable<TestEntry> {
 	long executionTime;
 	String result;
 
-	public TestEntry(String classMethodName, long executionTime,
-			String result) {
+	public TestEntry(String classMethodName, long executionTime, String result) {
 		super();
 		this.classMethodName = classMethodName;
 		this.executionTime = executionTime;

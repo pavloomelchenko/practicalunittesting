@@ -12,8 +12,7 @@ import org.junit.Test;
 
 public class RaceResultsServiceTest {
 	private LogService logService = mock(LogService.class);
-	private RaceResultsService raceResultsService = new RaceResultsService(
-			logService);
+	private RaceResultsService raceResultsService = new RaceResultsService(logService);
 	private Client sampleClient = mock(Client.class);
 	private Message sampleMessage = mock(Message.class);
 	private Categories sampleCategory = Categories.General;
@@ -86,8 +85,7 @@ public class RaceResultsServiceTest {
 	@Test
 	public void clientShouldNotReceiveMessagesRelatedToTheCategoriesHeHasNotSignedUp() {
 		raceResultsService.subscribe(sampleClient, Categories.F1Races);
-		doReturn(Categories.HorseRaces).when(sampleMessage)
-				.getCategory();
+		doReturn(Categories.HorseRaces).when(sampleMessage).getCategory();
 		raceResultsService.send(sampleMessage);
 		verify(sampleClient, never()).receive(sampleMessage);
 	}

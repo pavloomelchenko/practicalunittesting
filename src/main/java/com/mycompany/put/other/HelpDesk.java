@@ -5,13 +5,13 @@ import java.util.Calendar;
 public class HelpDesk {
 	public final static int EOB_HOUR = 17;
 	TimeProvider provider;
-	
+
 	public HelpDesk(TimeProvider provider) {
 		super();
 		this.provider = provider;
-	
+
 	}
-	
+
 	public boolean willHandleIssue(Issue issue) {
 		Calendar cal = provider.getTime();
 		int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);

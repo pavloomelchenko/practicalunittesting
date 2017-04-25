@@ -40,12 +40,9 @@ public class Email {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ ((address == null) ? 0 : address.hashCode());
-		result = prime * result
-				+ ((body == null) ? 0 : body.hashCode());
-		result = prime * result
-				+ ((title == null) ? 0 : title.hashCode());
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
+		result = prime * result + ((body == null) ? 0 : body.hashCode());
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
 	}
 
